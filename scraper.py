@@ -20,6 +20,8 @@ for row in root.cssselect("table.juliettable tr"):
             i_elements = td_elements[0].cssselect("b i")
             if len(i_elements) == 1:
               print "See Row"
+            elif len(td_elements) == 3 :
+              print "Group row"
             else:
               a_elements = td_elements[0].cssselect("a")
               if len(a_elements) == 2:
