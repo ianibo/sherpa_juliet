@@ -17,9 +17,13 @@ for row in root.cssselect("table.juliettable tr"):
     td_elements = row.cssselect("td")
     if td_elements is not None:
         if len(td_elements) > 1:
-            a_elements = td_elements[0].cssselect("a")
-            if len(a_elements) == 2:
-              print a_elements[0].attrib["name"], a_elements[1].text, a_elements[1].attrib["href"]
+            i_elements = td_elements[0].cssselect("b i")
+            if len(i_elements) == 1:
+              print "See Row"
+            else:
+              a_elements = td_elements[0].cssselect("a")
+              if len(a_elements) == 2:
+                print a_elements[0].attrib["name"], a_elements[1].text, a_elements[1].attrib["href"]
     else:
         print "Missing"
 
